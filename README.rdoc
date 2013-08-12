@@ -1,19 +1,45 @@
-= email-logger
+# Email Logger
 
-Description goes here.
+Logs all emails sent from rails to the database.
 
-== Contributing to email-logger
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+## Install
 
-Copyright (c) 2013 Mohammad. See LICENSE.txt for
-further details.
+1. Put this line in your Gemfile:
 
+    ``` rb
+    gem 'email-logger'
+    ```
+
+2. Then bundle:
+
+    ```
+    bundle
+    ```
+
+3. Generate the migration file by running the following command:
+
+    ```
+    rails g email_logger
+    ```
+
+4. Run the generated migration
+
+    ```
+    rake db:migrate
+    ```
+
+5. Remember to restart your server for the email logger initializer to load.
+
+
+## Usage
+
+No code changes are required. Any emails sent by ActionMailer will be logged to the email_logs table. You also have access to a standard AcitveRecord model that you can use to run queries on your email logs.
+
+## Contributing
+
+I encourage you to contribute to Email Logger. Feel free to send me pull requests.
+
+## License
+
+Email Logger is released under MIT License.
